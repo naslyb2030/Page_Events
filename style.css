@@ -4,7 +4,7 @@
     padding: 0;
 }
 body{
-    background-image: url(./image.webp);
+    background-image: url(./img/image.webp);
     background-repeat: no-repeat;
     background-size: cover;
 }

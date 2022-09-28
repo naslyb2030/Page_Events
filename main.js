@@ -14,7 +14,10 @@ document.getElementById('ingresar').addEventListener('click',e=>{
     if(usuario.value==='' || contraseña.value==='' ){
        error()
     }else if(usuario.value==='ranger'&&contraseña.value==='12345678'){
-        alert ('Bienvenido Ranger')
+        setTimeout(()=>{
+            window.location.href="./ingreso.html"
+        },2000)
+        
     }else{
         error()
     }

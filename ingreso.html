@@ -7,15 +7,19 @@
   <title>Pagina de Compra</title>
 </head>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap');
     *{
         box-sizing: border-box;
         margin: 0;
         padding: 0;
     }
-    body{
-        background-image: url(./font_page.webp);
+    .container{
+        font-family: 'Abyssinica SIL', serif;
+        background-image: url(./img/font_page.webp);
         background-repeat: no-repeat;
         background-size: cover;
+        width: 100%;
+        justify-content: center;
     }
     .lista{
         list-style: none;
@@ -30,6 +34,10 @@
         background-color: black;
         color: white;
     }
+    a{
+        text-decoration: none;
+        color: white;
+    }
     .firstImage{
         margin: 30px;
         width: 500px;
@@ -37,44 +45,169 @@
     }
     .us{
         height: 400px;
-        width: 1000px;
+        width: 1200px;
         background-color: rgba(175, 175, 174, 0.692);
         display: flex;
+        align-items: center;
 
     }
     main{
         margin: 20px;
+        display: grid;
+        justify-content: center;
+      
+    }
+    .productos_image{
+        border-bottom: solid 1px burlywood;
+       width: 130px;
+       height: 150px;
+    }
+    .producto{
+        background-color: white;
+        text-align: center;
+    }
+    .products{
+        gap: 20px;
+        margin: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    button{
+        background-color: chartreuse;
+        border:none;
+        height: 30px;
+        width: 80px;
+        font-size:medium;
+    }
+    footer{
+        display: flex;
+        background-color: black;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        color: white;
+    }
+    .listaProductos{
+        display: grid;
+        gap: 30px;
+        width: 100px;
+        justify-content: center;
+    }
+    #nosotros{
+        margin: 20px;
+    }
+    h2{
+        text-align: center;
+    }
+    #listProducts{
+        width: 110px;
+        height: 40px;
+    }
+    .modal{
+        /* position:fixed; para usar heigth: 100vh; */
+        /* position: absolute; */
         display: flex;
         justify-content: center;
         align-items: center;
+        position:fixed; 
+        top: -100vh;
+        background-color: rgba(0, 0, 0, 0.685);
+        height: 100vh;
+        width: 100%;
+    }
+    .windowsModal{
+        background-color: white;
+        text-align: center;
+        width: fit-content;
+        padding: 80px;
+    }
+    .cancel{
+        background-color: red;
     }
 </style>
 <body>
   <div class="container">
     <nav>
       <ul class="lista">
-        <li><i class="bi bi-house-door-fill"></i></li>
-        <li >About Us</li>
-        <li>Products </li>
+        <li><a href="#"><i class="bi bi-house-door-fill"></i></a></li>
+        <li><a href="#nosotros">About Us</a> </li>
+        <li><a href="#products">Products </a></li>
       
       </ul>
-      <span>Usuario: Ranger</span>
+      <span>User: Ranger <i class="bi bi-door-open-fill" id="out"></i></a></span>
 </nav>
 <main>
     <section class="us">
-        <img src="./venta.png" alt="" class="firstImage">
-       <div>
-        <h1>Nosotros</h1>
+        <img src="./img/venta.png" alt="" class="firstImage">
+       <div id="nosotros">
+        <h2>About Us</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque laboriosam quisquam explicabo ab assumenda pariatur laborum tempora maiores veritatis doloribus, voluptatibus excepturi et delectus dolore architecto! Nulla sapiente recusandae nisi iure explicabo ab magnam, vero exercitationem suscipit soluta. Dolores in, eaque perspiciatis nihil sint laborum voluptates saepe facere. Magni inventore quas quidem repudiandae excepturi rem tenetur delectus esse dicta porro adipisci, obcaecati repellat corrupti earum facere assumenda ratione ipsa deleniti natus aliquid saepe omnis qui libero! Culpa veritatis minus aspernatur sunt ad eius est enim numquam soluta, iure itaque quidem assumenda. Doloribus eum numquam obcaecati impedit dolorum voluptates inventore suscipit quo perferendis placeat. Doloremque sapiente possimus tempora? Dolorem aliquam laborum alias esse libero eius delectus at perspiciatis reprehenderit a, exercitationem ratione consectetur sit sint officiis atque non quos beatae voluptate amet. Omnis in ipsam porro rerum amet ducimus soluta quo molestias dicta magni, atque odio eius reiciendis, perferendis quia. Eveniet est architecto sed iusto. Odit ea voluptate quidem dolores repellat commodi similique dolore modi voluptatem eum nisi, totam odio qui tenetur aliquid sed harum ratione est quisquam ex recusandae consequatur. Ullam exercitationem, velit illum minima iusto saepe officiis eaque molestias, excepturi deserunt odio voluptatibus impedit reiciendis! Ipsa modi ea soluta!</p>
        </div>
     </section>
-    <section class="products">
+    <h2>Products</h2>
+    <section class="products" id="products">
+       
+        <div class="listaProductos">
+        <select name="productos" id="listProducts">
+            <option value=""></option>
+            <option value="Product1">Whisky</option>
+            <option value="Product2">Ginebra</option>
+            <option value="Product3">Cerveza</option>
+            <option value="Product4">Ron</option>
+            <option value="Product5">Tequila</option>
+            <option value="Product6">Vodka</option>
+            <option value="Product7">Coñac</option>
+          </select>
+          <button id="pedir">Buy</button>
+        </div>
 
+          <div class="producto">
+            <img src="./img/whisky.jpeg" alt="" class="productos_image">
+            <p>Whisky</p>
+          </div>
+          <div class="producto">
+            <img src="./img/ginebra.jpg" alt="" class="productos_image">
+            <p>Ginebra</p>
+          </div>
+          <div class="producto">
+            <img src="./img/cerveza.png" alt="" class="productos_image">
+            <p>Cerveza</p>
+          </div>
+          <div class="producto">
+            <img src="./img/ron.webp" alt="" class="productos_image">
+            <p>Ron</p>
+          </div>
+          <div class="producto">
+            <img src="./img/tequila.webp" alt="" class="productos_image">
+            <p>Tequila</p>
+          </div>
+          <div class="producto">
+            <img src="./img/vodka.png" alt="" class="productos_image">
+            <p>Vodka</p>
+          </div>
+          <div class="producto">
+            <img src="./img/coñac.jpg" alt="" class="productos_image">
+            <p>Coñac</p>
+          </div>
     </section>
 </main>
-</div>
-  <footer>
+    <footer>
     Coded by <a href="#">© Nasly Bermúdez Tarazona</a>
     </footer>
+</div>
+
+<div class="modal">
+    <div class="windowsModal">
+        <h3 class="modalTitle">INFORMATION</h3>
+        <p class="modalText">Select Product</p>
+        <p class="modalProduct">...</p>
+        <div class="btnGroup">
+            <button class="acept">Acept</button>
+            <button class="cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+<script src="./page.js"></script>
 </body>
 </html>
